@@ -1,110 +1,508 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Personal homepage of lixiaokang, an Advertising Algorithm Engineer at Alibaba who previously studied at the National University of Singapore.">
-  <meta name="theme-color" content="#f8f7f3">
+  <meta name="description" content="lixiaokang — Advertising Algorithm Engineer at Alibaba. Exploring generative recommendation, scaling for search, advertising and recommendation, and LLM agentic reinforcement learning. Previously studied at NUS.">
+  <meta name="theme-color" content="#0b0f0e">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="lixiaokang — Personal Homepage">
-  <meta property="og:description" content="Advertising Algorithm Engineer at Alibaba. Previously studied at the National University of Singapore.">
+  <meta property="og:title" content="lixiaokang | Generative Recommendation & Agentic RL">
+  <meta property="og:description" content="Advertising Algorithm Engineer at Alibaba. Generative recommendation, scaling for search, ads & recommendation, and LLM agents & RL.">
   <meta property="og:url" content="https://ellipsesduck.github.io/">
   <link rel="canonical" href="https://ellipsesduck.github.io/">
-  <title>lixiaokang — Personal Homepage</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b0f0e'/%3E%3Cpath d='M17 16v31h13m4-21 15 21m0-21L34 47' fill='none' stroke='%23c8f79a' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <title>lixiaokang | Generative Recommendation & Agentic RL</title>
   <style>
-    :root { color-scheme: light; --paper: #f8f7f3; --ink: #242c34; --muted: #626b73; --blue: #234f71; --line: #dedfd9; }
+    :root { color-scheme: dark; --bg: #0b0f0e; --panel: #111715; --panel-2: #17201b; --text: #f0f2eb; --muted: #9ca8a0; --quiet: #6f8075; --line: #28332d; --accent: #c8f79a; --accent-ink: #15220e; --blue: #89c5ec; --orange: #edb28a; --header: #0b0f0ed9; --grid: #c8f79a0b; --shadow: #00000035; }
+    [data-theme="light"] { color-scheme: light; --bg: #f3f5ef; --panel: #e9eee4; --panel-2: #e0e8da; --text: #17251b; --muted: #536457; --quiet: #657b6a; --line: #cbd5c6; --accent: #365c21; --accent-ink: #f5f8f0; --blue: #2e6589; --orange: #925226; --header: #f3f5efdf; --grid: #365c210b; --shadow: #19331b0a; }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
-    a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 5px; }
-    a:hover { color: #152f44; }
-    a:focus-visible { outline: 2px solid var(--blue); outline-offset: 5px; border-radius: 2px; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 0 48px; }
-    .skip { position: absolute; left: 20px; top: -80px; background: var(--paper); padding: 8px 16px; z-index: 1; }
-    .skip:focus { top: 12px; }
-    header { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 31px 0; border-bottom: 1px solid var(--line); }
-    .identity { display: flex; align-items: center; gap: 11px; font-size: 14px; font-weight: 600; letter-spacing: .02em; }
-    .mark { display: grid; place-items: center; width: 30px; height: 30px; background: var(--blue); color: #fff; font: 15px Georgia, serif; border-radius: 50%; }
-    nav { display: flex; gap: 25px; font-size: 13px; }
-    nav a { text-decoration: none; color: var(--muted); }
-    nav a:hover { color: var(--blue); }
-    main { padding: 76px 0 62px; }
-    .eyebrow { margin: 0 0 14px; color: var(--blue); font-size: 11px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
-    h1 { margin: 0 0 17px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(48px, 9vw, 77px); font-weight: 400; letter-spacing: -.055em; line-height: 1.15; }
-    .role { margin: 0; font-size: 18px; color: var(--muted); }
-    .role strong { color: var(--ink); font-weight: 500; }
-    .intro { margin: 28px 0 25px; max-width: 635px; font-size: 17px; line-height: 1.85; }
-    .contacts { display: flex; flex-wrap: wrap; gap: 12px 26px; font-size: 14px; }
-    .contacts a { display: inline-flex; align-items: center; gap: 8px; }
-    .contacts svg { flex-shrink: 0; width: 16px; height: 16px; }
-    .details { margin-top: 54px; border-top: 1px solid var(--line); }
-    .detail { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
-    h2 { margin: 2px 0 0; font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .07em; text-transform: uppercase; }
-    .detail p { margin: 0; }
-    .detail .secondary { color: var(--muted); font-size: 14px; margin-top: 2px; }
-    .contact-line { overflow-wrap: anywhere; }
-    footer { display: flex; justify-content: space-between; gap: 16px; padding: 20px 0 28px; color: var(--muted); font-size: 12px; }
-    footer a { color: var(--muted); }
-    @media (max-width: 600px) {
-      .wrap { padding: 0 24px; }
-      header { padding: 23px 0; }
-      nav { gap: 17px; }
-      nav .nav-about { display: none; }
-      main { padding: 50px 0 36px; }
-      h1 { font-size: clamp(45px, 12vw, 64px); }
-      .role { font-size: 16px; }
-      .intro { font-size: 16px; margin-top: 23px; }
-      .details { margin-top: 40px; }
-      .detail { grid-template-columns: 1fr; gap: 8px; padding: 22px 0; }
-      footer { flex-wrap: wrap; }
+    html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; -webkit-font-smoothing: antialiased; transition: background .25s, color .25s; }
+    ::selection { background: var(--accent); color: var(--accent-ink); }
+    a { color: inherit; text-decoration: none; }
+    button { color: inherit; font: inherit; cursor: pointer; }
+    a, button { -webkit-tap-highlight-color: transparent; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+    svg { display: block; }
+    .container { width: min(1240px, calc(100% - 112px)); margin-inline: auto; }
+    .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+    .skip { position: absolute; top: -100px; left: 20px; padding: 10px 20px; z-index: 30; background: var(--accent); color: var(--accent-ink); }
+    .skip:focus { top: 15px; }
+    .topbar { position: sticky; top: 0; z-index: 20; background: var(--header); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
+    .header-inner { height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 14px; }
+    .brand-symbol { width: 34px; height: 34px; color: var(--accent); }
+    .brand-word { font-size: 14px; font-weight: 600; letter-spacing: -.02em; }
+    nav { display: flex; align-items: center; gap: 30px; font-size: 13px; }
+    nav a { color: var(--muted); transition: color .2s; }
+    nav a:hover, nav a.active { color: var(--accent); }
+    nav a span { margin-right: 7px; color: var(--quiet); font-size: 10px; }
+    .header-actions { display: flex; align-items: center; gap: 10px; }
+    .icon-button { width: 37px; height: 37px; padding: 10px; border: 1px solid var(--line); border-radius: 50%; background: transparent; transition: border-color .2s, transform .2s; }
+    .icon-button:hover { border-color: var(--accent); transform: rotate(12deg); }
+    .icon-button svg { width: 15px; height: 15px; }
+    .sun { display: block; } .moon { display: none; }
+    [data-theme="light"] .sun { display: none; } [data-theme="light"] .moon { display: block; }
+    .language { width: auto; min-width: 38px; padding: 6px 9px; border-radius: 6px; font-size: 11px; }
+    .language:hover { transform: none; }
+    .hero { position: relative; overflow: clip; }
+    .hero::before { content: ""; position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(90deg, transparent 20%, black 80%); }
+    .hero-layout { min-height: 700px; padding-top: 80px; padding-bottom: 68px; display: grid; grid-template-columns: 1.08fr 1fr; gap: 58px; align-items: center; position: relative; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; color: var(--accent); font-size: 11px; line-height: 1.5; letter-spacing: .12em; text-transform: uppercase; }
+    .status-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 12px #c8f79a44; flex-shrink: 0; }
+    h1 { margin: 0 0 20px; font-size: clamp(60px, 6.8vw, 94px); font-weight: 650; line-height: 1.08; letter-spacing: -.065em; }
+    h1 .period { color: var(--accent); }
+    .hero-tagline { margin: 0 0 24px; font-size: clamp(25px, 2.8vw, 37px); font-weight: 400; letter-spacing: -.04em; line-height: 1.3; }
+    .hero-tagline .muted { color: var(--muted); }
+    .hero-bio { max-width: 510px; color: var(--muted); font-size: 15px; line-height: 1.85; margin: 0 0 28px; }
+    .hero-bio strong { font-weight: 500; color: var(--text); }
+    .cta-row { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 19px; min-height: 46px; padding: 10px 20px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; font-weight: 500; transition: transform .2s, border-color .2s, background .2s; }
+    .button:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .button-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+    .button svg { width: 16px; height: 16px; }
+    .hero-email { display: inline-block; margin-top: 24px; color: var(--quiet); font-size: 12px; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; overflow-wrap: anywhere; }
+    .hero-email:hover { color: var(--accent); border-color: var(--accent); }
+    .research-space { position: relative; min-width: 0; }
+    .space-top { display: flex; justify-content: space-between; align-items: center; padding: 0 2px; color: var(--quiet); font-size: 10px; letter-spacing: .1em; }
+    .space-top .coordinate { letter-spacing: 0; }
+    .canvas-wrap { height: 350px; position: relative; margin: 4px 0; }
+    .canvas-wrap::before { content: ""; position: absolute; inset: 10% 8%; background: radial-gradient(ellipse, #98c77d0b, transparent 70%); pointer-events: none; }
+    #neural-field { width: 100%; height: 100%; display: block; }
+    .orbit-label { position: absolute; color: var(--muted); font-size: 9px; letter-spacing: .09em; pointer-events: none; display: flex; align-items: center; gap: 7px; }
+    .orbit-label::before { content: ""; width: 4px; height: 4px; background: currentColor; border-radius: 50%; }
+    .label-a { left: 1%; top: 28%; color: var(--accent); }
+    .label-b { right: 0; top: 48%; color: var(--blue); }
+    .label-c { left: 11%; bottom: 12%; color: var(--orange); }
+    .space-caption { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0 0 17px; padding: 0 2px; color: var(--muted); font-size: 10px; }
+    .space-caption span:first-child { color: var(--accent); }
+    .space-controls { border: 1px solid var(--line); border-radius: 10px; background: var(--panel); overflow: hidden; box-shadow: 0 12px 30px var(--shadow); }
+    .mode-tabs { display: grid; grid-template-columns: repeat(3, 1fr); padding: 5px; gap: 4px; border-bottom: 1px solid var(--line); }
+    .mode-tab { border: 0; border-radius: 5px; background: transparent; color: var(--muted); padding: 8px 5px; font-size: 11px; transition: background .2s, color .2s; }
+    .mode-tab span { font-size: 9px; margin-right: 7px; opacity: .6; }
+    .mode-tab[aria-selected="true"] { background: var(--panel-2); color: var(--accent); }
+    .mode-description { padding: 15px 18px; min-height: 71px; }
+    .mode-title { margin: 0; font-size: 12px; font-weight: 500; }
+    .mode-subtitle { margin: 3px 0 0; color: var(--quiet); font-size: 10px; }
+    .topic-strip { border-block: 1px solid var(--line); position: relative; background: var(--panel); }
+    .topic-strip-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 22px; }
+    .strip-label { flex-shrink: 0; color: var(--quiet); font-size: 10px; letter-spacing: .13em; }
+    .strip-topics { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 17px; font-size: 11px; color: var(--muted); }
+    .strip-topics .asterisk { color: var(--accent); font-size: 16px; }
+    .section { padding-top: 100px; padding-bottom: 100px; }
+    .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 45px; margin-bottom: 40px; }
+    .section-number { color: var(--accent); font-size: 10px; letter-spacing: .15em; margin-bottom: 13px; text-transform: uppercase; }
+    h2 { margin: 0; font-size: clamp(30px, 3.4vw, 44px); font-weight: 500; line-height: 1.2; letter-spacing: -.045em; }
+    .section-heading > p { max-width: 350px; color: var(--muted); font-size: 13px; margin: 0 0 2px; }
+    .interest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .interest-card { min-width: 0; position: relative; border: 1px solid var(--line); border-radius: 12px; padding: 26px 26px 25px; background: var(--panel); overflow: hidden; transition: transform .3s, border-color .3s, box-shadow .3s; }
+    .interest-card:hover { transform: translateY(-6px); border-color: var(--card-color, var(--accent)); box-shadow: 0 18px 40px var(--shadow); }
+    .interest-card::before { content: ""; position: absolute; left: 26px; right: 26px; top: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--card-color), transparent); opacity: .5; }
+    .interest-card:nth-child(2) { --card-color: var(--blue); } .interest-card:nth-child(3) { --card-color: var(--orange); }
+    .interest-card:first-child { --card-color: var(--accent); }
+    .card-top { display: flex; justify-content: space-between; align-items: center; color: var(--quiet); font-size: 10px; }
+    .card-top .card-category { color: var(--card-color); letter-spacing: .12em; }
+    .card-art { height: 130px; width: 100%; margin: 19px 0 16px; color: var(--card-color); }
+    .card-art .faint { opacity: .18; } .card-art .mid { opacity: .5; }
+    .interest-card h3 { margin: 0 0 13px; font-weight: 500; font-size: 20px; letter-spacing: -.025em; line-height: 1.3; min-height: 52px; }
+    .interest-card p { font-size: 12px; color: var(--muted); line-height: 1.85; margin: 0 0 24px; min-height: 68px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tags span { padding: 3px 7px; border: 1px solid var(--line); border-radius: 4px; font-size: 9px; color: var(--muted); }
+    .about-section { border-top: 1px solid var(--line); padding-block: 83px; }
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; }
+    .about-copy { color: var(--muted); font-size: 14px; max-width: 445px; margin: 25px 0 0; line-height: 1.9; }
+    .about-copy strong { color: var(--text); font-weight: 500; }
+    .timeline { padding-top: 4px; }
+    .timeline-entry { display: grid; grid-template-columns: 72px 1fr; gap: 24px; position: relative; padding-bottom: 33px; }
+    .timeline-entry:last-child { padding-bottom: 0; }
+    .timeline-entry::before { content: ""; position: absolute; left: 83px; top: 12px; bottom: -8px; width: 1px; background: var(--line); }
+    .timeline-entry:last-child::before { display: none; }
+    .time-label { color: var(--quiet); font-size: 10px; padding-top: 5px; }
+    .timeline-content { position: relative; padding-left: 9px; }
+    .timeline-content::before { content: ""; position: absolute; left: -16px; top: 9px; width: 7px; height: 7px; border-radius: 50%; background: var(--bg); border: 1px solid var(--quiet); }
+    .timeline-entry:first-child .timeline-content::before { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 10px #c8f79a22; }
+    .timeline h3 { margin: 0; font-size: 19px; font-weight: 500; letter-spacing: -.02em; }
+    .timeline p { margin: 5px 0 0; font-size: 12px; color: var(--muted); }
+    .timeline .detail-note { color: var(--quiet); font-size: 11px; }
+    .contact-section { padding-block: 0 60px; }
+    .contact-panel { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 40px; border: 1px solid var(--line); border-radius: 14px; padding: 42px 46px; background: var(--panel); overflow: hidden; }
+    .contact-panel::before { content: ""; position: absolute; width: 400px; height: 400px; right: -200px; top: -240px; border-radius: 50%; background: #c8f79a09; box-shadow: 0 0 100px #c8f79a06; pointer-events: none; }
+    .contact-panel h2 { font-size: 34px; }
+    .contact-panel p { color: var(--muted); font-size: 12px; max-width: 400px; margin-bottom: 0; }
+    .email-group { min-width: 0; }
+    .email-link { font-size: clamp(16px, 1.65vw, 22px); letter-spacing: -.035em; border-bottom: 1px solid var(--quiet); padding-bottom: 5px; color: var(--accent); overflow-wrap: anywhere; }
+    .email-tools { display: flex; justify-content: flex-end; align-items: center; gap: 18px; margin-top: 19px; color: var(--muted); font-size: 11px; }
+    #copy-email { border: 0; padding: 0; background: transparent; display: flex; align-items: center; gap: 7px; font-size: 11px; }
+    #copy-email:hover, .email-tools a:hover { color: var(--accent); }
+    #copy-email svg { width: 13px; height: 13px; }
+    footer { border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-block: 25px; color: var(--quiet); font-size: 10px; }
+    .footer-right { display: flex; gap: 22px; }
+    .footer-right a:hover { color: var(--accent); }
+    .toast { position: fixed; left: 50%; bottom: 28px; z-index: 40; transform: translate(-50%, 15px); border: 1px solid var(--line); border-radius: 7px; padding: 10px 18px; background: var(--panel-2); color: var(--text); box-shadow: 0 8px 30px var(--shadow); font-size: 12px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; }
+    .toast.visible { opacity: 1; transform: translate(-50%, 0); }
+    .draw-path { stroke-dasharray: 7 7; animation: flow 18s linear infinite; }
+    @keyframes flow { to { stroke-dashoffset: -280; } }
+    @media (min-width: 1600px) { .hero-layout { min-height: 740px; padding-block: 100px; } }
+    @media (max-width: 1100px) {
+      .container { width: calc(100% - 72px); }
+      .hero-layout { gap: 30px; min-height: 650px; }
+      h1 { font-size: 7.2vw; }
+      .hero-tagline { font-size: 28px; }
+      .canvas-wrap { height: 300px; }
+      .interest-card { padding: 22px; }
+      .interest-card h3 { font-size: 18px; }
+      .about-layout { gap: 50px; }
+      .contact-panel { padding: 36px; }
     }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media (max-width: 800px) {
+      .container { width: calc(100% - 48px); }
+      .header-inner { height: 74px; }
+      nav { gap: 20px; } nav a span { display: none; }
+      .hero-layout { grid-template-columns: 1fr; padding-top: 55px; padding-bottom: 40px; gap: 40px; }
+      h1 { font-size: clamp(66px, 12vw, 92px); }
+      .hero-tagline { font-size: 34px; }
+      .hero-bio { max-width: 590px; }
+      .research-space { width: min(100%, 540px); margin: 0 auto; }
+      .canvas-wrap { height: 320px; }
+      .section { padding-block: 65px; }
+      .interest-grid { grid-template-columns: 1fr; gap: 15px; }
+      .interest-card { display: grid; grid-template-columns: 1fr 1.4fr; column-gap: 25px; padding: 25px; }
+      .card-top { grid-column: 1 / -1; margin-bottom: 20px; }
+      .card-art { grid-column: 1; grid-row: 2 / 5; height: 160px; margin: 0; align-self: center; }
+      .interest-card h3 { grid-column: 2; min-height: 0; font-size: 20px; }
+      .interest-card p { grid-column: 2; min-height: 0; margin-bottom: 16px; }
+      .tags { grid-column: 2; }
+      .section-heading { gap: 30px; }
+      .section-heading > p { max-width: 250px; }
+      .about-layout { grid-template-columns: 1fr; gap: 40px; }
+      .about-copy { max-width: 570px; }
+      .contact-panel { align-items: flex-start; flex-direction: column; gap: 28px; }
+      .email-link { font-size: 23px; }
+      .email-tools { justify-content: flex-start; }
+      .topic-strip-inner { align-items: flex-start; }
+      .strip-topics { gap: 10px; }
+    }
+    @media (max-width: 480px) {
+      .container { width: calc(100% - 40px); }
+      .brand-word { display: none; }
+      .header-inner { height: 68px; gap: 14px; }
+      nav { gap: 17px; font-size: 11px; }
+      .header-actions { gap: 7px; }
+      .icon-button { width: 31px; height: 31px; padding: 7px; }
+      .language { padding: 5px; font-size: 10px; min-width: 31px; }
+      .hero-layout { padding-top: 43px; gap: 30px; }
+      .eyebrow { font-size: 9px; letter-spacing: .09em; margin-bottom: 19px; }
+      h1 { font-size: clamp(52px, 13vw, 65px); letter-spacing: -.07em; margin-bottom: 18px; }
+      .hero-tagline { font-size: 28px; }
+      .hero-bio { font-size: 13px; line-height: 1.9; }
+      .cta-row { gap: 10px; }
+      .button { min-height: 43px; padding: 9px 15px; font-size: 12px; gap: 12px; }
+      .hero-email { font-size: 11px; margin-top: 19px; }
+      .canvas-wrap { height: 285px; }
+      .space-top { font-size: 8px; }
+      .orbit-label { font-size: 8px; }
+      .space-caption { font-size: 8px; }
+      .mode-tab { font-size: 10px; }
+      .mode-title { font-size: 11px; }
+      .mode-subtitle { font-size: 9px; }
+      .topic-strip-inner { flex-direction: column; gap: 12px; padding-block: 18px; }
+      .strip-topics { justify-content: flex-start; gap: 10px; font-size: 9px; }
+      .strip-topics .asterisk { font-size: 13px; }
+      .section-heading { display: block; margin-bottom: 28px; }
+      .section-heading > p { max-width: none; margin-top: 18px; font-size: 12px; }
+      h2 { font-size: 31px; }
+      .interest-card { display: block; padding: 24px; }
+      .card-top { margin-bottom: 0; }
+      .card-art { height: 120px; margin: 14px 0; }
+      .interest-card h3 { font-size: 21px; }
+      .interest-card p { font-size: 12px; }
+      .about-section { padding-block: 60px; }
+      .timeline-entry { grid-template-columns: 63px 1fr; gap: 20px; }
+      .timeline-entry::before { left: 70px; }
+      .timeline-content::before { left: -16px; }
+      .timeline h3 { font-size: 16px; }
+      .time-label { font-size: 9px; }
+      .contact-panel { padding: 28px 23px; }
+      .contact-panel h2 { font-size: 30px; }
+      .email-link { font-size: 18px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
   </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <div class="wrap">
-    <header>
-      <div class="identity"><span class="mark" aria-hidden="true">l.</span><span>lixiaokang</span></div>
+  <header class="topbar">
+    <div class="container header-inner">
+      <a class="brand" href="#main" aria-label="lixiaokang home">
+        <svg class="brand-symbol" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M5 9v24h11m6-17 12 17m0-17L22 33" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M30 7h6m-3-3v6" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span class="brand-word">lixiaokang</span>
+      </a>
       <nav aria-label="Main navigation">
-        <a class="nav-about" href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="https://github.com/EllipsesDuck">GitHub ↗</a>
+        <a href="#research"><span class="mono">01</span><b data-en="Research" data-zh="研究方向" style="font-weight:400">Research</b></a>
+        <a href="#about"><span class="mono">02</span><b data-en="About" data-zh="关于我" style="font-weight:400">About</b></a>
+        <a href="#contact"><span class="mono">03</span><b data-en="Contact" data-zh="联系" style="font-weight:400">Contact</b></a>
       </nav>
-    </header>
-    <main id="main">
-      <section id="about" aria-labelledby="name">
-        <p class="eyebrow">Personal homepage</p>
-        <h1 id="name">lixiaokang</h1>
-        <p class="role">Advertising Algorithm Engineer · <strong>Alibaba</strong></p>
-        <p class="intro">I am an Advertising Algorithm Engineer at Alibaba. I previously studied at the National University of Singapore (NUS).</p>
-        <div class="contacts">
-          <a href="mailto:e1373315@u.nus.edu">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
-            e1373315@u.nus.edu
-          </a>
-          <a href="https://github.com/EllipsesDuck">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg>
-            EllipsesDuck ↗
-          </a>
-        </div>
-      </section>
-      <div class="details">
-        <section class="detail" aria-labelledby="affiliation-title">
-          <h2 id="affiliation-title">Current affiliation</h2>
-          <div><p>Alibaba</p><p class="secondary">Advertising Algorithm Engineer</p></div>
-        </section>
-        <section class="detail" aria-labelledby="education-title">
-          <h2 id="education-title">Education</h2>
-          <div><p>National University of Singapore</p><p class="secondary">Previously studied at NUS</p></div>
-        </section>
-        <section class="detail" id="contact" aria-labelledby="contact-title">
-          <h2 id="contact-title">Contact</h2>
-          <div><p class="contact-line"><a href="mailto:e1373315@u.nus.edu">e1373315@u.nus.edu</a></p><p class="secondary">For professional and academic correspondence.</p></div>
-        </section>
+      <div class="header-actions">
+        <button id="language-toggle" class="icon-button language mono" type="button" aria-label="Switch to Chinese">中</button>
+        <button id="theme-toggle" class="icon-button" type="button" aria-label="Switch to light theme" aria-pressed="false">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14A8.5 8.5 0 0 1 10 4a8.5 8.5 0 1 0 10 10Z"/></svg>
+        </button>
       </div>
-    </main>
-    <footer><span>© 2026 lixiaokang</span><a href="https://github.com/EllipsesDuck">GitHub profile ↗</a></footer>
-  </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="name">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow mono"><span class="status-dot" aria-hidden="true"></span><span data-en="Algorithm Engineer / Alibaba" data-zh="广告算法工程师 / 阿里巴巴">Algorithm Engineer / Alibaba</span></p>
+          <h1 id="name">lixiaokang<span class="period" aria-hidden="true">.</span></h1>
+          <p class="hero-tagline"><span data-en="Generative recommendation." data-zh="探索生成式推荐。">Generative recommendation.</span><br><span class="muted" data-en="Intelligence at scale." data-zh="让智能随规模生长。">Intelligence at scale.</span></p>
+          <p class="hero-bio" data-en="I am an Advertising Algorithm Engineer at Alibaba. My interests lie in generative recommendation, scaling models for search, advertising and recommendation, and reinforcement learning for LLM agents." data-zh="我目前在阿里巴巴担任广告算法工程师，关注生成式推荐、面向搜索 / 广告 / 推荐的模型规模化，以及 LLM Agent 的强化学习。">I am an Advertising Algorithm Engineer at Alibaba. My interests lie in generative recommendation, scaling models for search, advertising and recommendation, and reinforcement learning for LLM agents.</p>
+          <div class="cta-row">
+            <a class="button button-primary" href="#research"><span data-en="Explore my interests" data-zh="了解研究方向">Explore my interests</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            <a class="button" href="https://github.com/EllipsesDuck" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 4v-4a3.5 3.5 0 0 0-1-2.5c3-.3 6-1.5 6-6a4.5 4.5 0 0 0-1.2-3.1A4.3 4.3 0 0 0 18.7 2S17.5 1.7 15 3.3a11 11 0 0 0-6 0C6.5 1.7 5.3 2 5.3 2a4.3 4.3 0 0 0-.1 3.4A4.5 4.5 0 0 0 4 8.5c0 4.5 3 5.7 6 6A3.5 3.5 0 0 0 9 17v4"/></svg><span>GitHub</span><span aria-hidden="true">↗</span></a>
+          </div>
+          <a class="hero-email mono" href="mailto:e1373315@u.nus.edu">e1373315@u.nus.edu ↗</a>
+        </div>
+        <div class="research-space">
+          <div class="space-top mono"><span>LATENT SPACE / RESEARCH INTERESTS</span><span class="coordinate" aria-hidden="true">x · y · z</span></div>
+          <div class="canvas-wrap">
+            <canvas id="neural-field" aria-hidden="true"></canvas>
+            <span class="orbit-label label-a mono">CONTEXT</span><span class="orbit-label label-b mono">POSSIBILITIES</span><span class="orbit-label label-c mono">LEARNING</span>
+          </div>
+          <div class="space-caption mono"><span id="space-sequence">context → semantic IDs → recommendation</span><span data-en="A visual exploration" data-zh="研究方向的视觉表达">A visual exploration</span></div>
+          <div class="space-controls">
+            <div class="mode-tabs" role="tablist" aria-label="Explore research interests">
+              <button class="mode-tab mono" id="tab-generate" role="tab" aria-selected="true" aria-controls="mode-panel" data-mode="0" type="button"><span>01</span>GENERATE</button>
+              <button class="mode-tab mono" id="tab-scale" role="tab" aria-selected="false" aria-controls="mode-panel" tabindex="-1" data-mode="1" type="button"><span>02</span>SCALE</button>
+              <button class="mode-tab mono" id="tab-learn" role="tab" aria-selected="false" aria-controls="mode-panel" tabindex="-1" data-mode="2" type="button"><span>03</span>LEARN</button>
+            </div>
+            <div class="mode-description" id="mode-panel" role="tabpanel" aria-labelledby="tab-generate" tabindex="0">
+              <p class="mode-title" id="mode-title">Generative recommendation</p><p class="mode-subtitle mono" id="mode-subtitle">Represent preferences. Generate possibilities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="topic-strip">
+      <div class="container topic-strip-inner">
+        <span class="strip-label mono" data-en="CURRENT FOCUS" data-zh="关注方向">CURRENT FOCUS</span>
+        <div class="strip-topics mono"><span>GENERATIVE REC</span><span class="asterisk" aria-hidden="true">✳</span><span>SCALING UP FOR SEARCH / ADS / REC</span><span class="asterisk" aria-hidden="true">✳</span><span>LLM AGENTIC RL</span></div>
+      </div>
+    </div>
+    <section class="section container" id="research" aria-labelledby="research-title">
+      <div class="section-heading">
+        <div><div class="section-number mono" data-en="01 / Research interests" data-zh="01 / 研究兴趣">01 / Research interests</div><h2 id="research-title" data-en="What I'm exploring." data-zh="我感兴趣的研究方向。">What I'm exploring.</h2></div>
+        <p data-en="Learning better representations, building at scale, and enabling agents to learn through interaction." data-zh="从更好的表征，到更大规模的模型，再到能从交互中学习的智能体。">Learning better representations, building at scale, and enabling agents to learn through interaction.</p>
+      </div>
+      <div class="interest-grid">
+        <article class="interest-card">
+          <div class="card-top mono"><span>01</span><span class="card-category">GENERATE</span></div>
+          <svg class="card-art" viewBox="0 0 300 130" fill="none" aria-hidden="true"><path class="faint" d="M15 65h270M150 10v110" stroke="currentColor"/><path class="draw-path mid" d="M30 65C75 65 80 28 125 28h50c45 0 50 37 95 37M30 65c45 0 50 37 95 37h50c45 0 50-37 95-37M30 65h240" stroke="currentColor"/><rect x="20" y="49" width="30" height="32" rx="5" fill="var(--panel)" stroke="currentColor"/><rect x="119" y="15" width="30" height="26" rx="4" fill="var(--panel)" stroke="currentColor"/><rect x="150" y="52" width="30" height="26" rx="4" fill="var(--panel)" stroke="currentColor"/><rect x="119" y="89" width="30" height="26" rx="4" fill="var(--panel)" stroke="currentColor"/><circle cx="267" cy="65" r="12" fill="var(--panel)" stroke="currentColor"/><circle cx="267" cy="65" r="4" fill="currentColor"/><path d="m31 60 7 5-7 5" stroke="currentColor"/><path class="faint" d="M155 28h20m10 0h8M186 65h20m10 0h8M155 102h20m10 0h8" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+          <h3 data-en="Generative recommendation" data-zh="生成式推荐">Generative recommendation</h3>
+          <p data-en="Semantic representations, sequence modeling, and generation-based retrieval for personalized recommendation." data-zh="关注语义表征、序列建模与生成式检索，探索面向个性化推荐的生成范式。">Semantic representations, sequence modeling, and generation-based retrieval for personalized recommendation.</p>
+          <div class="tags mono"><span>Semantic IDs</span><span>Sequence modeling</span><span>Retrieval</span></div>
+        </article>
+        <article class="interest-card">
+          <div class="card-top mono"><span>02</span><span class="card-category">SCALE</span></div>
+          <svg class="card-art" viewBox="0 0 300 130" fill="none" aria-hidden="true"><path class="faint" d="M25 15v95h250M25 40h250M25 75h250M85 15v95M145 15v95M205 15v95M265 15v95" stroke="currentColor"/><path class="mid" d="M30 100c55-4 69-12 100-25s57-20 80-35 35-22 60-25" stroke="currentColor" stroke-width="1.5"/><path d="M30 103c52-8 67-20 96-31s53-18 80-34 42-21 64-28" stroke="currentColor" stroke-width="2"/><path class="draw-path faint" d="M30 108c50-3 80-7 114-17s66-23 126-48" stroke="currentColor"/><circle cx="126" cy="72" r="4" fill="currentColor"/><circle cx="206" cy="38" r="4" fill="currentColor"/><circle cx="270" cy="10" r="4" fill="var(--panel)" stroke="currentColor"/><path d="M126 82v20m80-54v54" stroke="currentColor" class="faint" stroke-dasharray="2 4"/></svg>
+          <h3 data-en="Scaling up for search, ads & rec" data-zh="搜广推的 Scaling Up">Scaling up for search, ads & rec</h3>
+          <p data-en="Scaling model capacity, data, and computation for search, advertising, and recommendation systems." data-zh="探索搜索、广告与推荐中的模型容量、数据和计算规模化，以及有效的训练与推理。">Scaling model capacity, data, and computation for search, advertising, and recommendation systems.</p>
+          <div class="tags mono"><span>Scaling</span><span>Search / Ads / Rec</span><span>Efficiency</span></div>
+        </article>
+        <article class="interest-card">
+          <div class="card-top mono"><span>03</span><span class="card-category">LEARN</span></div>
+          <svg class="card-art" viewBox="0 0 300 130" fill="none" aria-hidden="true"><path class="draw-path mid" d="M76 65c0-35 35-48 74-48s74 13 74 48-35 48-74 48-74-13-74-48Z" stroke="currentColor"/><path class="faint" d="M150 17v96M76 65h148" stroke="currentColor"/><rect x="47" y="49" width="58" height="32" rx="6" fill="var(--panel)" stroke="currentColor"/><rect x="195" y="49" width="58" height="32" rx="6" fill="var(--panel)" stroke="currentColor"/><path d="m145 12 8 5-8 5m10 86-8 5 8 5" stroke="currentColor"/><text x="76" y="68" fill="currentColor" text-anchor="middle" font-family="monospace" font-size="9">AGENT</text><text x="224" y="68" fill="currentColor" text-anchor="middle" font-family="monospace" font-size="9">WORLD</text><circle cx="150" cy="17" r="4" fill="currentColor"/><circle cx="150" cy="113" r="4" fill="currentColor"/></svg>
+          <h3 data-en="LLM agents & reinforcement learning" data-zh="LLM Agent 与强化学习">LLM agents & reinforcement learning</h3>
+          <p data-en="Agentic reasoning, tool use, and reinforcement learning for language models that learn through interaction." data-zh="关注智能体推理、工具使用与强化学习，探索语言模型如何通过环境交互持续学习。">Agentic reasoning, tool use, and reinforcement learning for language models that learn through interaction.</p>
+          <div class="tags mono"><span>Agentic RL</span><span>Reasoning</span><span>Tool use</span></div>
+        </article>
+      </div>
+    </section>
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="container about-layout">
+        <div>
+          <div class="section-number mono" data-en="02 / A little about me" data-zh="02 / 关于我">02 / A little about me</div>
+          <h2 id="about-title"><span data-en="Research curiosity." data-zh="保持研究的好奇。">Research curiosity.</span><br><span style="color:var(--muted)" data-en="An engineering mindset." data-zh="坚持工程的实践。">An engineering mindset.</span></h2>
+          <p class="about-copy" data-en="I work on advertising algorithms at Alibaba and previously studied at the National University of Singapore. I am interested in the connections between recommendation, large-scale learning, and intelligent agents." data-zh="我目前在阿里巴巴从事广告算法工作，之前就读于新加坡国立大学。我尤其关注推荐系统、大规模学习与智能体之间的联系。">I work on advertising algorithms at Alibaba and previously studied at the National University of Singapore. I am interested in the connections between recommendation, large-scale learning, and intelligent agents.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-entry"><span class="time-label mono" data-en="NOW" data-zh="现在">NOW</span><div class="timeline-content"><h3>Alibaba</h3><p data-en="Advertising Algorithm Engineer" data-zh="广告算法工程师">Advertising Algorithm Engineer</p><p class="detail-note" data-en="Industry · Advertising algorithms" data-zh="工业界 · 广告算法">Industry · Advertising algorithms</p></div></article>
+          <article class="timeline-entry"><span class="time-label mono" data-en="PREVIOUSLY" data-zh="曾就读">PREVIOUSLY</span><div class="timeline-content"><h3>National University of Singapore</h3><p data-en="Education · Previously studied at NUS" data-zh="教育背景 · 曾就读于新加坡国立大学">Education · Previously studied at NUS</p><p class="detail-note">Singapore</p></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="contact-section container" id="contact" aria-labelledby="contact-title">
+      <div class="contact-panel">
+        <div><div class="section-number mono" data-en="03 / Get in touch" data-zh="03 / 联系我">03 / Get in touch</div><h2 id="contact-title" data-en="Let's exchange ideas." data-zh="期待交流新的想法。">Let's exchange ideas.</h2><p data-en="Generative recommendation, scaling, or agentic RL — I would love to hear your thoughts." data-zh="无论是生成式推荐、Scaling，还是 Agentic RL，欢迎交流。">Generative recommendation, scaling, or agentic RL — I would love to hear your thoughts.</p></div>
+        <div class="email-group"><a class="email-link" href="mailto:e1373315@u.nus.edu">e1373315@u.nus.edu ↗</a><div class="email-tools"><button id="copy-email" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></svg><span data-en="Copy email" data-zh="复制邮箱">Copy email</span></button><a href="https://github.com/EllipsesDuck" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container footer-inner"><span>© 2026 lixiaokang <span aria-hidden="true">/</span> <span data-en="Personal homepage" data-zh="个人主页">Personal homepage</span></span><div class="footer-right mono"><a href="https://github.com/EllipsesDuck/ellipsesduck.github.io" target="_blank" rel="noopener noreferrer" data-en="VIEW SOURCE ↗" data-zh="查看源码 ↗">VIEW SOURCE ↗</a><a href="#main" data-en="BACK TO TOP ↑" data-zh="返回顶部 ↑">BACK TO TOP ↑</a></div></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themeToggle = document.getElementById('theme-toggle');
+      const languageToggle = document.getElementById('language-toggle');
+      const tabs = Array.from(document.querySelectorAll('.mode-tab'));
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let language = 'en';
+      let mode = 0;
+      let theme = 'dark';
+      let toastTimer;
+      const modes = [
+        { en: ['Generative recommendation', 'Represent preferences. Generate possibilities.'], zh: ['生成式推荐', '用表征理解偏好，以生成探索可能。'], sequence: 'context → semantic IDs → recommendation' },
+        { en: ['Scaling up for search, ads & rec', 'Scale the model. Expand the learning frontier.'], zh: ['搜广推的 Scaling Up', '探索模型、数据与计算的规模化。'], sequence: 'data × model × compute → capability' },
+        { en: ['LLM agents & reinforcement learning', 'Reason. Act. Learn from interaction.'], zh: ['LLM Agent 与强化学习', '推理、行动，并从交互中学习。'], sequence: 'observe → reason → act → learn' }
+      ];
+      function setTheme(value) {
+        theme = value === 'light' ? 'light' : 'dark';
+        root.dataset.theme = theme;
+        themeToggle.setAttribute('aria-pressed', String(theme === 'light'));
+        themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0b0f0e' : '#f3f5ef';
+        try { localStorage.setItem('lx-theme', theme); } catch (_) {}
+        if (reducedMotion.matches) requestAnimationFrame(drawStatic);
+      }
+      function updateMode() {
+        document.getElementById('mode-title').textContent = modes[mode][language][0];
+        document.getElementById('mode-subtitle').textContent = modes[mode][language][1];
+        document.getElementById('space-sequence').textContent = modes[mode].sequence;
+        tabs.forEach((tab, i) => { tab.setAttribute('aria-selected', String(i === mode)); tab.tabIndex = i === mode ? 0 : -1; });
+        document.getElementById('mode-panel').setAttribute('aria-labelledby', tabs[mode].id);
+        if (reducedMotion.matches) requestAnimationFrame(drawStatic);
+      }
+      function setLanguage(value) {
+        language = value === 'zh' ? 'zh' : 'en';
+        root.lang = language === 'zh' ? 'zh-CN' : 'en';
+        document.querySelectorAll('[data-en][data-zh]').forEach(el => { el.textContent = el.dataset[language]; });
+        languageToggle.textContent = language === 'en' ? '中' : 'EN';
+        languageToggle.setAttribute('aria-label', language === 'en' ? 'Switch to Chinese' : 'Switch to English');
+        try { localStorage.setItem('lx-language', language); } catch (_) {}
+        updateMode();
+      }
+      themeToggle.addEventListener('click', () => setTheme(theme === 'dark' ? 'light' : 'dark'));
+      languageToggle.addEventListener('click', () => setLanguage(language === 'en' ? 'zh' : 'en'));
+      tabs.forEach((tab, i) => {
+        tab.addEventListener('click', () => { mode = i; updateMode(); });
+        tab.addEventListener('keydown', event => {
+          let next = i;
+          if (event.key === 'ArrowRight') next = (i + 1) % tabs.length;
+          else if (event.key === 'ArrowLeft') next = (i + tabs.length - 1) % tabs.length;
+          else if (event.key === 'Home') next = 0;
+          else if (event.key === 'End') next = tabs.length - 1;
+          else return;
+          event.preventDefault(); mode = next; updateMode(); tabs[next].focus();
+        });
+      });
+      function toast(text) {
+        const el = document.getElementById('toast');
+        el.textContent = text; el.classList.add('visible');
+        clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('visible'), 2400);
+      }
+      document.getElementById('copy-email').addEventListener('click', async () => {
+        let timeout;
+        toast(language === 'zh' ? '正在复制邮箱…' : 'Copying email…');
+        try {
+          await Promise.race([
+            navigator.clipboard.writeText('e1373315@u.nus.edu'),
+            new Promise((_, reject) => { timeout = setTimeout(() => reject(new Error('Clipboard unavailable')), 1600); })
+          ]);
+          toast(language === 'zh' ? '邮箱已复制' : 'Email copied to clipboard');
+        } catch (_) { toast(language === 'zh' ? '请复制邮箱：e1373315@u.nus.edu' : 'Please copy: e1373315@u.nus.edu'); }
+        finally { clearTimeout(timeout); }
+      });
+      const navLinks = Array.from(document.querySelectorAll('nav a'));
+      if ('IntersectionObserver' in window) {
+        const sectionObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => { if (entry.isIntersecting) navLinks.forEach(link => link.classList.toggle('active', link.hash === '#' + entry.target.id)); });
+        }, { rootMargin: '-15% 0px -35% 0px', threshold: 0 });
+        document.querySelectorAll('#research, #about, #contact').forEach(section => sectionObserver.observe(section));
+      }
+      const canvas = document.getElementById('neural-field');
+      const ctx = canvas.getContext('2d');
+      let width = 500, height = 350, pointerX = 0, pointerY = 0, rotation = 0, previousTime = 0, frame;
+      let isVisible = true;
+      const points = [];
+      for (let row = 1; row < 23; row++) {
+        const phi = Math.PI * row / 23;
+        const count = Math.round(40 * Math.sin(phi));
+        for (let column = 0; column < count; column++) points.push({ phi, theta: 2 * Math.PI * column / count, row, column });
+      }
+      function resize() {
+        const rect = canvas.getBoundingClientRect(); width = rect.width; height = rect.height;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
+        if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        drawStatic();
+      }
+      function project(x, y, z, angle) {
+        const c = Math.cos(angle), s = Math.sin(angle);
+        const rx = x * c + z * s, rz = -x * s + z * c;
+        const tilt = -.22 + pointerY * .09;
+        const ry = y * Math.cos(tilt) - rz * Math.sin(tilt), depth = y * Math.sin(tilt) + rz * Math.cos(tilt);
+        const scale = 2.7 / (2.7 - depth * .35);
+        const radius = Math.min(width * .37, height * .41);
+        return { x: width / 2 + rx * radius * scale, y: height / 2 + ry * radius * scale, z: depth, scale };
+      }
+      function draw(time) {
+        if (!ctx) return;
+        ctx.clearRect(0, 0, width, height);
+        const palette = theme === 'dark' ? [[200,247,154],[137,197,236],[237,178,138]] : [[54,92,33],[46,101,137],[146,82,38]];
+        const color = palette[mode], rgb = color.join(',');
+        const angle = rotation + pointerX * .22;
+        const cloud = points.map(point => {
+          let x = Math.sin(point.phi) * Math.cos(point.theta), y = Math.cos(point.phi), z = Math.sin(point.phi) * Math.sin(point.theta);
+          if (mode === 1) { const wave = Math.sin(point.theta * 2 + point.phi * 3 + time * .0003) * .09; x *= 1 + wave; z *= 1 + wave; y *= .83; }
+          if (mode === 2) { const twist = point.phi * .65 + time * .0002; x = Math.sin(point.phi) * Math.cos(point.theta + twist); z = Math.sin(point.phi) * Math.sin(point.theta + twist); }
+          return { ...project(x, y, z, angle), row: point.row, column: point.column };
+        }).sort((a, b) => a.z - b.z);
+        for (let orbit = 0; orbit < 3; orbit++) {
+          ctx.beginPath();
+          for (let step = 0; step <= 120; step++) {
+            const a = step / 120 * Math.PI * 2;
+            const p = project(Math.cos(a) * 1.12, Math.sin(a) * (.22 + orbit * .25), Math.sin(a) * (1.02 - orbit * .19), angle + orbit * .85);
+            if (step === 0) ctx.moveTo(p.x, p.y); else ctx.lineTo(p.x, p.y);
+          }
+          ctx.strokeStyle = 'rgba(' + rgb + ',' + (theme === 'dark' ? .12 : .17) + ')'; ctx.lineWidth = .65; ctx.stroke();
+          const a = time * .00013 + orbit * 2.1;
+          const p = project(Math.cos(a) * 1.12, Math.sin(a) * (.22 + orbit * .25), Math.sin(a) * (1.02 - orbit * .19), angle + orbit * .85);
+          ctx.beginPath(); ctx.arc(p.x, p.y, 2.4, 0, Math.PI * 2); ctx.fillStyle = 'rgba(' + rgb + ',.8)'; ctx.fill();
+        }
+        cloud.forEach(point => {
+          const alpha = .12 + (point.z + 1) * .36;
+          const highlighted = (point.row + point.column) % 31 === 0 && point.z > 0;
+          ctx.beginPath(); ctx.arc(point.x, point.y, (highlighted ? 2.2 : 1.1) * point.scale, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(' + rgb + ',' + Math.min(.95, highlighted ? .95 : alpha) + ')'; ctx.fill();
+          if (highlighted) { ctx.beginPath(); ctx.arc(point.x, point.y, 6, 0, Math.PI * 2); ctx.strokeStyle = 'rgba(' + rgb + ',.15)'; ctx.lineWidth = .7; ctx.stroke(); }
+        });
+        const center = project(0,0,0,angle);
+        ctx.beginPath(); ctx.arc(center.x,center.y,3,0,Math.PI*2);ctx.fillStyle='rgba('+rgb+',.9)';ctx.fill();
+      }
+      function drawStatic() { draw(5000); }
+      function animate(timestamp) {
+        if (document.hidden || !isVisible || reducedMotion.matches) { frame = null; return; }
+        if (timestamp - previousTime > 30) { rotation += .0027; draw(timestamp); previousTime = timestamp; }
+        frame = requestAnimationFrame(animate);
+      }
+      function resume() { if (!frame && !reducedMotion.matches && !document.hidden && isVisible) frame = requestAnimationFrame(animate); }
+      canvas.addEventListener('pointermove', event => { const r = canvas.getBoundingClientRect(); pointerX = (event.clientX-r.left)/r.width-.5; pointerY = (event.clientY-r.top)/r.height-.5; if(reducedMotion.matches) drawStatic(); });
+      canvas.addEventListener('pointerleave', () => { pointerX = 0; pointerY = 0; if(reducedMotion.matches) drawStatic(); });
+      document.addEventListener('visibilitychange', resume);
+      reducedMotion.addEventListener('change', () => { if(reducedMotion.matches) { if(frame) cancelAnimationFrame(frame); frame=null; drawStatic(); } else resume(); });
+      if ('IntersectionObserver' in window) new IntersectionObserver(entries => { isVisible = entries[0].isIntersecting; if (isVisible) resume(); }).observe(canvas);
+      if ('ResizeObserver' in window) new ResizeObserver(resize).observe(canvas); else window.addEventListener('resize', resize);
+      try { const savedTheme = localStorage.getItem('lx-theme'); if (savedTheme) theme = savedTheme; const savedLanguage = localStorage.getItem('lx-language'); if(savedLanguage) language = savedLanguage; } catch (_) {}
+      setTheme(theme); setLanguage(language); resize(); resume();
+    })();
+  </script>
 </body>
 </html>
